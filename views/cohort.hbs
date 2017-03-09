@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EDA Phase 1 Express Boilerplate</title>
+    <title>Kakapo Cohort</title>
   </head>
   <body>
     <ul>
     {{#each cohort}}
-      <li>{{name}}</li>
+      <a href='/cohort/{{id}}'><li>{{name}}</li></a>
     {{/each}}
     </ul>
   </body>
