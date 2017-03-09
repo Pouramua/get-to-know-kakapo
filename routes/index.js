@@ -4,29 +4,25 @@ var knex = require('knex')
 var db = require('../db')
 
 module.exports = {
-  get: get,
   getHome: getHome,
   showForm: showForm,
+  saveForm: saveForm,
   getCohort: getCohort,
   getIndividual: getIndividual
 }
 
-function get (req, res) {
-  db.getUsers()
-    .then(function (users) {
-      res.render('index', { users: users })
-    })
-    .catch(function (err) {
-      res.status(500).send('DATABASE ERROR: ' + err.message)
-    })
-}
 
-function getHome (req, res){
+function getHome (req, res) {
   res.render('home.hbs')
 }
 
 function showForm (req, res) {
   res.render('form.hbs')
+}
+
+function saveForm (req, res) {
+  // db.saveForm()
+  res.send('hello')
 }
 
 function getCohort (req, res) {
