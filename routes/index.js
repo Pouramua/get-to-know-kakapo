@@ -1,11 +1,13 @@
 var express = require('express')
+var knex = require('knex')
 
 var db = require('../db')
 
 module.exports = {
   get: get,
+  showForm: showForm,
   getCohort: getCohort,
-  showForm: showForm
+  getIndividual: getIndividual
 }
 
 function get (req, res) {
@@ -18,6 +20,9 @@ function get (req, res) {
     })
 }
 
+function showForm (req, res) {
+  res.render('form.hbs')
+  
 function getCohort (req, res) {
   db.getCohort()
     .then(function (cohort) {
@@ -28,6 +33,14 @@ function getCohort (req, res) {
     })
 }
 
-function showForm (req, res) {
-  res.render('form.hbs')
+function getIndividual (req, res) {
+  db.getIndividual(req.params.id)
+    .select()
+    .then(function (result) {
+      console.log(result[0].name);
+      res.render('individual', result[0])
+    })
+    .catch(function (err) {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 }
