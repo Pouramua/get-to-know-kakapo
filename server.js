@@ -20,5 +20,6 @@ server.use(bodyParser.urlencoded({ extended: true }))
 // Routes
 
 server.get('/', index.get)
+server.get('/form', index.showForm)
 server.get('/cohort', index.getCohort)
 server.get('/cohort/:id', index.getIndividual)
