@@ -20,4 +20,5 @@ server.use(bodyParser.urlencoded({ extended: true }))
 // Routes
 
 server.get('/', index.get)
-
+server.get('/cohort', index.getCohort)
+// server.get('/', index.get)
