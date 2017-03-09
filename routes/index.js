@@ -5,6 +5,7 @@ var db = require('../db')
 
 module.exports = {
   get: get,
+  getHome: getHome,
   showForm: showForm,
   getCohort: getCohort,
   getIndividual: getIndividual
@@ -18,6 +19,10 @@ function get (req, res) {
     .catch(function (err) {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
+}
+
+function getHome (req, res){
+  res.render('home.hbs')
 }
 
 function showForm (req, res) {
