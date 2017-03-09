@@ -22,7 +22,8 @@ function get (req, res) {
 
 function showForm (req, res) {
   res.render('form.hbs')
-  
+}
+
 function getCohort (req, res) {
   db.getCohort()
     .then(function (cohort) {
