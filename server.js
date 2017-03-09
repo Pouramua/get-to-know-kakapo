@@ -21,4 +21,5 @@ server.use(bodyParser.urlencoded({ extended: true }))
 
 server.get('/', index.get)
 server.get('/cohort', index.getCohort)
+server.get('/form', index.showForm)
 // server.get('/', index.get)
