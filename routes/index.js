@@ -5,6 +5,7 @@ var db = require('../db')
 
 module.exports = {
   get: get,
+  showForm: showForm,
   getCohort: getCohort,
   getIndividual: getIndividual
 }
@@ -19,6 +20,9 @@ function get (req, res) {
     })
 }
 
+function showForm (req, res) {
+  res.render('form.hbs')
+  
 function getCohort (req, res) {
   db.getCohort()
     .then(function (cohort) {
