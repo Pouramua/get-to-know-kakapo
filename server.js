@@ -10,8 +10,9 @@ var server = express()
 
 module.exports = server
 
-// Middleware
+server.use(express.static('./styles'))
 
+// Middleware
 server.engine('hbs', hbs({extname: 'hbs'}))
 server.set('view engine', 'hbs')
 server.set('views', path.join(__dirname, 'views'))
