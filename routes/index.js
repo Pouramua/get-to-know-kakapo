@@ -11,7 +11,6 @@ module.exports = {
   getIndividual: getIndividual
 }
 
-
 function getHome (req, res) {
   res.render('home.hbs')
 }
@@ -41,7 +40,6 @@ function getIndividual (req, res) {
   db.getIndividual(req.params.id)
     .select()
     .then(function (result) {
-      console.log(result[0].name);
       res.render('individual', result[0])
     })
     .catch(function (err) {
