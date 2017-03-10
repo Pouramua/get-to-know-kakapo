@@ -11,7 +11,6 @@ module.exports = {
   getIndividual: getIndividual
 }
 
-
 function getHome (req, res) {
   res.render('home.hbs')
 }
@@ -22,9 +21,9 @@ function showForm (req, res) {
 
 function saveForm (req, res) {
   db.saveForm(req.body)
-    .then(function() {
-      res.redirect('/cohort')
-    })
+  .then(function () {
+    res.redirect('/cohort')
+  })
 }
 
 function getCohort (req, res) {
