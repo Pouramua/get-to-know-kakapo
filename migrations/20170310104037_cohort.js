@@ -4,6 +4,7 @@ exports.up = function (knex, Promise) {
     table.string('name')
     table.string('food')
     table.string('hobbies')
+    table.string('birthday')
   })
 }
 

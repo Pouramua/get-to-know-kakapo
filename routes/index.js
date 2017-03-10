@@ -41,7 +41,6 @@ function getIndividual (req, res) {
   db.getIndividual(req.params.id)
     .select()
     .then(function (result) {
-      console.log(result[0].name);
       res.render('individual', result[0])
     })
     .catch(function (err) {
