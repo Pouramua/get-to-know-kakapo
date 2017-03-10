@@ -8,7 +8,6 @@ module.exports = {
   getIndividual: getIndividual
 }
 
-
 function saveForm (cohort_details, testDb) {
   var db = testDb || connection
   return db('cohort').insert(cohort_details)
