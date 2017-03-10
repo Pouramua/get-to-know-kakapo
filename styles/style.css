@@ -10,7 +10,7 @@ h1 {
 .names {
   color: black;
   padding: 0px;
-  background-color: red;
+  background-color: #94A7A6;
 }
 
 .submit {
@@ -44,4 +44,9 @@ a:hover {
 
 img {
   border-radius: 17px;
+}
+
+p {
+  font-weight: bold;
+  font-size: 20px;
 }
