@@ -21,8 +21,10 @@ function showForm (req, res) {
 }
 
 function saveForm (req, res) {
-  // db.saveForm()
-  res.send('hello')
+  db.saveForm(req.body)
+    .then(function() {
+      res.redirect('/cohort')
+    })
 }
 
 function getCohort (req, res) {
